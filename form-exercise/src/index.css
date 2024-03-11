@@ -1,68 +1,98 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  background: #d7d4d4;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 47%;
+  width: 80%;
+  overflow-y: auto;
+  flex-direction: column;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+/* Your other CSS rules go here */
+#cards {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1vw 2vw;
+  flex-wrap: wrap;
+  gap: 3vw;
+  justify-content: center;
+}
+
+#card {
+  height: 100%;
+  background: rgb(226, 231, 226);
+  width: 20%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid black;
+  display: flex;
+  padding: 0.3vw 0.4vw;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8vw;
+  align-items: center;
+}
+
+#btn {
+  padding: 3px 8px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#card img {
+  width: 32%;
+  height: 33%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid black;
+}
+
+#card h3 {
+  font-size: 1.2vw;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  color: black;
+  text-align: center;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#card p {
+  font-size: 1.2vw;
+  font-weight: 500;
+  color: black;
+  text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+form {
+  display: flex;
+  gap: 2vw;
+  margin-top: 4vw;
+}
+
+input {
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 5px;
 }

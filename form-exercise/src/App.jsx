@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import Cards from "./components/Cards";
+import Form from "./components/Form";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [users, setUsers] = useState([
+    {
+      name: "Harsh",
+      bio: "I am a web developer",
+      img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9kZWxzfGVufDB8fDB8fHww",
+    },
+  ]);
 
+  const handleClick = (data) => {
+    console.log(data);
+
+    setUsers([...users, data]);
+  };
+
+  const onRemove = (index) => {
+    console.log(index);
+
+    const newUsers = users.filter((user, i) => i !== index);
+
+    setUsers(newUsers);
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div id="main">
+      <div className="container">
+        <Cards users={users} onRemove={onRemove} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <Form handleClick={handleClick} />
+    </div>
+  );
+};
 
-export default App
+export default App;
