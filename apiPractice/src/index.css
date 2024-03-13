@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+#cards {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(238, 241, 240);
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 3vw;
+}
+
+#card {
+  border: 2px solid black;
+
+  border-radius: 10px;
+  padding: 1vw 2vw;
+  width: 25%;
+  height: 75%;
+  display: flex;
+  gap: 0.2vw;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: white;
+}
+
+#card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#card h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: blanchedalmond;
+  border-radius: 4px solid;
+}
+/* Your other CSS rules go here */
